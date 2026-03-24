@@ -52,6 +52,7 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 body {
@@ -193,4 +194,33 @@ img, svg {
 ::selection {
   background: rgba(139, 92, 246, 0.3);
   color: var(--text-primary);
+}
+
+/* ── MOBILE GLOBAL TUNING ── */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .section {
+    padding: 4rem 0;
+  }
+
+  .btn {
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 15px;
+  }
+
+  .container {
+    padding: 0 0.9rem;
+  }
+
+  .section {
+    padding: 3.5rem 0;
+  }
 }

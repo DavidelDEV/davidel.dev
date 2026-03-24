@@ -364,5 +364,27 @@ const passions = [
     .skills-categories {
       grid-template-columns: 1fr;
     }
+    .timeline {
+      padding-left: 1.2rem;
+    }
+    .timeline-dot {
+      left: -1.55rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .timeline {
+      padding-left: 1rem;
+    }
+
+    .timeline-dot {
+      left: -1.35rem;
+      width: 9px;
+      height: 9px;
+    }
+
+    .timeline-content h3 {
+      font-size: 1rem;
+    }
   }
 </style>

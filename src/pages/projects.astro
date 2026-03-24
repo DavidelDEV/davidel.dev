@@ -286,9 +286,46 @@ import projects from '../data/projects.json';
     font-size: 0.8rem;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
+    .projects-hero {
+      padding-top: 7rem;
+      padding-bottom: 1rem;
+    }
+
+    .page-sub {
+      font-size: 0.95rem;
+    }
+
     .projects-grid {
       grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .project-card {
+      padding: 1.15rem;
+      gap: 0.85rem;
+    }
+
+    .featured-badge {
+      top: 0.9rem;
+      right: 0.9rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .project-header {
+      gap: 0.75rem;
+      align-items: flex-start;
+    }
+
+    .project-links {
+      flex-shrink: 0;
+    }
+
+    .project-btn {
+      width: 100%;
+      justify-content: center;
     }
   }
 </style>
