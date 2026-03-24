@@ -1,11 +1,445 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Home" description="davidel.dev — developer personal portfolio. Cod curat, idei clare, soluții elegante.">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-glow"></div>
+
+    <div class="container hero-content">
+      <div class="hero-badge fade-in">
+        <span class="dot"></span>
+        <span>Available for work</span>
+      </div>
+
+      <h1 class="hero-title fade-in">
+        <span class="line">Salut, sunt</span>
+        <span class="line accent-line">davidel<span class="dot-accent">.</span>dev</span>
+      </h1>
+
+      <p class="hero-sub fade-in">
+        Developer pasionat de cod curat, design elegant și soluții care funcționează cu adevărat.<br />
+        Construiesc lucruri de pe net care merită să existe.
+      </p>
+
+      <div class="hero-actions fade-in">
+        <a href="/projects" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+          Vezi proiectele
+        </a>
+        <a href="/contact" class="btn btn-ghost">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Contactează-mă
+        </a>
+      </div>
+
+      <div class="hero-stats fade-in">
+        <div class="stat">
+          <span class="stat-num">∞</span>
+          <span class="stat-label">cafele</span>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">cod curat</span>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat">
+          <span class="stat-num">24/7</span>
+          <span class="stat-label">curiozitate</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- SKILLS STRIP -->
+  <section class="skills-strip">
+    <div class="container">
+      <p class="tag">Tech stack</p>
+      <div class="skills-grid">
+        {['JavaScript', 'TypeScript', 'React', 'Node.js', 'Next.js', 'Astro', 'PostgreSQL', 'Docker', 'Cloudflare', 'Git'].map(skill => (
+          <span class="skill-chip">{skill}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECTS preview -->
+  <section class="section featured-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="tag">Proiecte recente</p>
+        <h2 class="section-title">Ce am construit</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="featured-grid">
+        <a href="/projects" class="featured-card">
+          <div class="featured-card-glow"></div>
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+          </div>
+          <h3>Proiecte</h3>
+          <p>Explorează tot ce am construit — de la aplicații web la tool-uri și experimente.</p>
+          <span class="card-arrow">→</span>
+        </a>
+
+        <a href="/about" class="featured-card">
+          <div class="featured-card-glow"></div>
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <h3>Despre mine</h3>
+          <p>Skills, experiență și de ce mă trezesc dimineața să scriu cod.</p>
+          <span class="card-arrow">→</span>
+        </a>
+
+        <a href="/contact" class="featured-card">
+          <div class="featured-card-glow"></div>
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3>Contact</h3>
+          <p>Ai un proiect sau o idee? Să vorbim — sunt întotdeauna deschis la conversații interesante.</p>
+          <span class="card-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
 </Layout>
+
+<style>
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px;
+  }
+
+  .hero-bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(139, 92, 246, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(139, 92, 246, 0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black, transparent);
+  }
+
+  .hero-glow {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(ellipse, rgba(109, 40, 217, 0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent-bright);
+    margin-bottom: 2rem;
+    letter-spacing: 0.05em;
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 8px #22c55e;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 8vw, 5.5rem);
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1em;
+    line-height: 1.05;
+  }
+
+  .line {
+    color: var(--text-secondary);
+    font-size: 0.5em;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.3em;
+  }
+
+  .accent-line {
+    background: linear-gradient(135deg, #fff 20%, var(--accent-bright) 60%, #c4b5fd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .dot-accent {
+    color: var(--accent);
+    -webkit-text-fill-color: var(--accent-bright);
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+  }
+
+  .hero-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1.5rem 2.5rem;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    backdrop-filter: blur(8px);
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+  }
+
+  .stat-num {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-bright);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    letter-spacing: 0.05em;
+  }
+
+  .stat-sep {
+    width: 1px;
+    height: 36px;
+    background: var(--border);
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, var(--accent-bright), transparent);
+    margin: 0 auto;
+    animation: scrollFade 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollFade {
+    0% { opacity: 0; transform: scaleY(0); transform-origin: top; }
+    50% { opacity: 1; transform: scaleY(1); }
+    100% { opacity: 0; transform: scaleY(0); transform-origin: bottom; }
+  }
+
+  /* ── SKILLS STRIP ── */
+  .skills-strip {
+    padding: 3rem 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: rgba(255,255,255,0.01);
+  }
+
+  .skills-strip .tag {
+    margin-bottom: 1.25rem;
+    display: block;
+  }
+
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .skill-chip {
+    padding: 0.4rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    background: rgba(139, 92, 246, 0.04);
+    transition: all var(--transition);
+    cursor: default;
+  }
+
+  .skill-chip:hover {
+    border-color: var(--border-hover);
+    color: var(--accent-bright);
+    background: var(--accent-glow);
+  }
+
+  /* ── FEATURED ── */
+  .section-header {
+    margin-bottom: 3rem;
+  }
+
+  .section-header .tag {
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    color: var(--text-primary);
+  }
+
+  .featured-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .featured-card {
+    position: relative;
+    padding: 2rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: all var(--transition);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .featured-card:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-3px);
+    background: var(--bg-card-hover);
+  }
+
+  .featured-card-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    opacity: 0;
+    transition: opacity var(--transition);
+  }
+
+  .featured-card:hover .featured-card-glow {
+    opacity: 1;
+  }
+
+  .card-icon {
+    color: var(--accent-bright);
+    width: 44px;
+    height: 44px;
+    background: var(--accent-glow);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .featured-card h3 {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  .featured-card p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .card-arrow {
+    font-size: 1.2rem;
+    color: var(--accent-bright);
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: all var(--transition);
+    display: block;
+  }
+
+  .featured-card:hover .card-arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  @media (max-width: 900px) {
+    .featured-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .hero-stats {
+      gap: 1.25rem;
+      padding: 1.25rem 1.5rem;
+    }
+  }
+</style>
