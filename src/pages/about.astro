@@ -1,0 +1,368 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// ── EDITEAZĂ AICI informațiile personale ──
+const experience = [
+  {
+    period: "2020",
+    role: "Game Developer Freelancer",
+    company: "Self-taught · Unity",
+    description: "Am început totul de la zero, fără cursuri și fără ajutor — am învățat Unity singur, din documentație și trial & error. Primele jocuri, primele bug-uri, primele lecții reale."
+  },
+  {
+    period: "2021",
+    role: "Web Developer",
+    company: "Site-uri & proiecte personale",
+    description: "Am trecut în lumea web-ului — HTML, CSS, JavaScript. Am construit primele site-uri, am înțeles cum funcționează internetul și am prins gustul pentru design și experiență utilizator."
+  },
+  {
+    period: "2025 – prezent",
+    role: "Software Developer",
+    company: "Aplicații & proiecte proprii",
+    description: "Am extins zona de confort spre software — aplicații mai complexe, arhitecturi mai serioase, securitate și sisteme care funcționează la scară. Continuu să construiesc și să învăț zilnic."
+  },
+];
+
+const passions = [
+  { icon: "🎮", label: "Game Dev", desc: "Unde a început totul" },
+  { icon: "🌐", label: "Web", desc: "Design & experiență" },
+  { icon: "🔐", label: "Securitate", desc: "Criptografie & sisteme sigure" },
+  { icon: "🤖", label: "Software", desc: "Aplicații care contează" },
+  { icon: "🎵", label: "Muzică", desc: "Soundtracks & vibes" },
+  { icon: "📚", label: "Self-taught", desc: "Totul din curiozitate" },
+];
+---
+
+<Layout title="About" description="Despre davidel.dev — developer full-stack pasionat de cod curat și soluții elegante.">
+
+  <section class="section about-hero">
+    <div class="container">
+      <p class="tag fade-in">Despre mine</p>
+      <h1 class="page-title fade-in">Bine ai venit în<br /><span class="accent">culisele</span> codului meu</h1>
+      <div class="divider fade-in"></div>
+    </div>
+  </section>
+
+  <section class="section about-main">
+    <div class="container about-grid">
+
+      <!-- Bio -->
+      <div class="bio-block fade-in">
+        <div class="avatar-wrapper">
+          <div class="avatar-placeholder">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div class="avatar-ring"></div>
+        </div>
+
+        <div class="bio-text">
+          <h2>Salut, sunt <span class="accent">David</span></h2>
+          <p>
+            Am 20 de ani, sunt din România și de mic m-a fascinat lumea digitală. Am început cu game dev în 2020, 
+            învățând Unity complet singur — fără cursuri, fără tutori, doar curiozitate și determinare.
+          </p>
+          <p>
+            De-a lungul anilor am trecut prin web development și în 2025 am intrat serios în software. 
+            În prezent lucrez ca game developer și software developer, construind lucruri care îmi plac 
+            și care (sper) contează pentru alții.
+          </p>
+          <div class="bio-links">
+            <a href="https://github.com/DavidelDEV" target="_blank" class="bio-link">GitHub</a>
+            <a href="mailto:david@davidel.dev" class="bio-link">Email</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Passions -->
+      <div class="passions-block fade-in">
+        <h2>Ce mă <span class="accent">definește</span></h2>
+        <div class="divider"></div>
+        <p class="passions-intro">Nu am urmat niciun curs. Tot ce știu am construit singur — din curiozitate, din greșeli și din ore pierdute fericit în fața unui editor de cod sau unui motor de jocuri.</p>
+        <div class="passions-grid">
+          {passions.map(p => (
+            <div class="passion-card">
+              <span class="passion-icon">{p.icon}</span>
+              <div>
+                <p class="passion-label">{p.label}</p>
+                <p class="passion-desc">{p.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section class="section exp-section">
+    <div class="container">
+      <p class="tag">Experiență</p>
+      <h2 class="section-title fade-in">Parcurs <span class="accent">profesional</span></h2>
+      <div class="divider"></div>
+
+      <div class="timeline">
+        {experience.map((exp, i) => (
+          <div class={`timeline-item fade-in`} style={`animation-delay: ${i * 0.15}s`}>
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-period">{exp.period}</span>
+              <h3>{exp.role}</h3>
+              <p class="timeline-company">{exp.company}</p>
+              <p class="timeline-desc">{exp.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .about-hero {
+    padding-top: 10rem;
+    padding-bottom: 2rem;
+  }
+
+  .about-hero .tag {
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .page-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: var(--text-primary);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .accent {
+    color: var(--accent-bright);
+  }
+
+  .section-title {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    margin-bottom: 1rem;
+  }
+
+  /* ── About Grid ── */
+  .about-grid {
+    display: grid;
+    gap: 3rem;
+  }
+
+  .bio-block {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  .avatar-wrapper {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+  }
+
+  .avatar-placeholder {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+  }
+
+  .avatar-ring {
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    background: linear-gradient(135deg, var(--accent), transparent) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+  }
+
+  .bio-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .bio-text h2 {
+    font-size: 1.6rem;
+  }
+
+  .bio-text p {
+    color: var(--text-secondary);
+    line-height: 1.75;
+    font-size: 0.95rem;
+  }
+
+  .bio-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .bio-link {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--accent-bright);
+    border-bottom: 1px solid rgba(139,92,246,0.3);
+    padding-bottom: 2px;
+    transition: all var(--transition);
+    letter-spacing: 0.05em;
+  }
+
+  .bio-link:hover {
+    border-color: var(--accent-bright);
+  }
+
+  /* ── Passions ── */
+  .passions-block h2 {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .passions-intro {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 1.75rem;
+    max-width: 480px;
+  }
+
+  .passions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .passion-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: all var(--transition);
+  }
+
+  .passion-card:hover {
+    border-color: var(--border-hover);
+    background: var(--bg-card-hover);
+    transform: translateY(-2px);
+  }
+
+  .passion-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .passion-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.15rem;
+  }
+
+  .passion-desc {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+  }
+
+  /* ── Timeline ── */
+  .exp-section { padding-top: 2rem; }
+
+  .exp-section .tag {
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  .timeline {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-left: 1px solid var(--border);
+    padding-left: 2rem;
+    margin-left: 0.5rem;
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-bottom: 2.5rem;
+  }
+
+  .timeline-item:last-child {
+    padding-bottom: 0;
+  }
+
+  .timeline-dot {
+    position: absolute;
+    left: -2.45rem;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 12px var(--accent-glow-strong);
+    border: 2px solid var(--bg-primary);
+  }
+
+  .timeline-period {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent-bright);
+    opacity: 0.8;
+    letter-spacing: 0.05em;
+  }
+
+  .timeline-content h3 {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    margin-top: 0.25rem;
+    font-weight: 600;
+  }
+
+  .timeline-company {
+    font-size: 0.85rem;
+    color: var(--accent-bright);
+    opacity: 0.6;
+    margin: 0.2rem 0 0.6rem;
+    font-family: var(--font-mono);
+  }
+
+  .timeline-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+
+  @media (max-width: 768px) {
+    .bio-block {
+      grid-template-columns: 1fr;
+    }
+    .avatar-wrapper {
+      width: 80px;
+      height: 80px;
+    }
+    .avatar-placeholder {
+      width: 80px;
+      height: 80px;
+    }
+    .skills-categories {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

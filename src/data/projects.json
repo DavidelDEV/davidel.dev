@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "davidel.dev",
+    "description": "Portofoliu personal construit cu Astro, hostat pe Cloudflare Pages. Design dark/violet, animații fine și structură ușor de extins.",
+    "stack": ["Astro", "CSS", "JavaScript", "Cloudflare Pages"],
+    "demo": "https://davidel.dev",
+    "github": "https://github.com/DavidelDEV/davidel.dev",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "title": "Cipherr",
+    "description": "Aplicație de chat securizat cu mesaje criptate end-to-end, apeluri video și partajare fișiere în timp real.",
+    "stack": ["Next.js", "WebSockets", "E2E Encryption", "PostgreSQL"],
+    "demo": "https://cipherr.lat",
+    "github": "",
+    "featured": true
+  }
+]
